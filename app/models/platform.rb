@@ -8,4 +8,12 @@ class Platform < ApplicationRecord
     portable_console: 4,
     computer: 5,
   }
+
+  validates :name, :category, presence: true
+  validates :name, uniqueness: true
+
+  def es
+    self.valid?
+    p self.errors.messages
+  end
 end
