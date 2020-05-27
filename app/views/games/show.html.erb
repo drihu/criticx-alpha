@@ -8,3 +8,10 @@
   <li>Genre(s): <%= @game.genres.map { |gen| gen.name }.join(', ') %></li>
 </ul>
 <p><%= link_to 'Back to Games', games_path %></p>
+<p>
+  <%=
+    link_to 'Delete this Game', game_path(@game), method: :delete, data: {
+      confirm: 'Do you really want to delete this game?',
+    }
+  %>
+</p>
