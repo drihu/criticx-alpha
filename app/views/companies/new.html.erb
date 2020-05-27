@@ -1,0 +1,32 @@
+<h1>Create a New Company</h1>
+<%= form_for(@company) do |f| %>
+  <ul>
+    <% @company.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.label :start_date %><br>
+    <%= f.text_field :start_date %>
+  </p>
+
+  <p>
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

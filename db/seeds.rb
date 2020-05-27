@@ -16,18 +16,16 @@ genres = parse('db/data/genres.json')['genres']
 platforms = parse('db/data/platforms.json')
 games = parse('db/data/games.json')
 
-companies.each do |company|
-  Company.create!(company)
-end
+puts 'Loading companies'
+Company.create!(companies)
 
-genres.each do |genre|
-  Genre.create!(name: genre)
-end
+puts 'Loading genres'
+genres.each { |genre| Genre.create!(name: genre) }
 
-platforms.each do |platform|
-  Platform.create!(platform)
-end
+puts 'Loading platforms'
+Platform.create!(platforms)
 
+puts 'Loading games and associations: genres, platforms and involved_companies'
 games.each do |game|
   new_game = Game.new(game.slice('name', 'summary', 'release_date', 'category', 'rating'))
   parent_game = Game.find_by(name: game['parent'])
