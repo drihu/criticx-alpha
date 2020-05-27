@@ -1,0 +1,19 @@
+<h1>All the Companies</h1>
+<p>Find me in app/views/companies/index.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= company.country %></td>
+        <td><%= link_to 'Show', company %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
