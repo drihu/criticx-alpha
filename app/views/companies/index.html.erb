@@ -13,6 +13,7 @@
         <td><%= company.name %></td>
         <td><%= company.country %></td>
         <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Edit', edit_company_path(company) %></td>
       </tr>
     <% end %>
   </tbody>
