@@ -10,7 +10,7 @@ class Game < ApplicationRecord
 
   validates :name, :category, presence: true
   validates :name, uniqueness: true
-  validates :rating, numericality: {
+  validates :rating, allow_nil: true, numericality: {
     greater_than_or_equal_to: 0,
     less_than_or_equal_to: 100,
   }
