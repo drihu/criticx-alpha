@@ -2,8 +2,9 @@ class User < ApplicationRecord
   has_many :reviews
 
   validates :username, :email, presence: true, uniqueness: true
-
   validate :older_than_16
+
+  has_secure_password
 
   before_create do |user|
     user.review_count = 0
