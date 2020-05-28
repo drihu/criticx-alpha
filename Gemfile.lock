@@ -58,6 +58,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     ast (2.4.0)
     backport (1.1.2)
+    bcrypt (3.1.13)
     benchmark (0.1.0)
     bindex (0.8.1)
     bootsnap (1.4.6)
@@ -215,6 +216,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
   jbuilder (~> 2.7)

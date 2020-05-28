@@ -1,0 +1,9 @@
+<h1>Welcome to Criticx</h1>
+
+<% if logged_in? %>
+  <div>You are logged in, <%= current_user.username %></div>
+  <%= button_to 'Log out', session_path, method: :delete %>
+<% else %>
+  <%= button_to 'Login', '/login', method: :get %>
+  <%= button_to 'Sign Up', '/users/new', method: :get %>
+<% end %>
