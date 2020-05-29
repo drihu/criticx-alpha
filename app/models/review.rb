@@ -1,17 +1,7 @@
 class Review < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   belongs_to :reviewable, polymorphic: true
 
   validates :title, :body, presence: true
   validates :title, length: { maximum: 40 }, uniqueness: true
-
-  after_create do |review|
-    user = review.user
-    user.update(review_count: user.review_count + 1)
-  end
-
-  after_destroy do |review|
-    user = review.user
-    user.update(review_count: user.review_count - 1)
-  end
 end
