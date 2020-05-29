@@ -19,7 +19,7 @@
   </p>
   <p>
     <%= f.label :category %><br />
-    <%= f.text_field :category %>
+    <%= f.select :category, Game.categories.keys %>
   </p>
   <p>
     <%= f.label :rating %><br />
